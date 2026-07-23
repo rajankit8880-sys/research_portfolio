@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Raj — Computational Chemistry Research Scholar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- decorative molecular backdrop, purely visual -->
+<svg class="bg-lattice" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g class="bonds">
+    <line x1="120" y1="140" x2="260" y2="90"></line>
+    <line x1="260" y1="90" x2="360" y2="180"></line>
+    <line x1="360" y1="180" x2="300" y2="300"></line>
+    <line x1="300" y1="300" x2="120" y2="140"></line>
+    <line x1="900" y1="120" x2="1020" y2="200"></line>
+    <line x1="1020" y1="200" x2="980" y2="330"></line>
+    <line x1="980" y1="330" x2="840" y2="300"></line>
+    <line x1="840" y1="300" x2="900" y2="120"></line>
+    <line x1="150" y1="600" x2="280" y2="660"></line>
+    <line x1="280" y1="660" x2="260" y2="760"></line>
+    <line x1="1000" y1="620" x2="1100" y2="560"></line>
+    <line x1="1100" y1="560" x2="1150" y2="670"></line>
+  </g>
+  <g class="atoms">
+    <circle cx="120" cy="140" r="5"></circle>
+    <circle cx="260" cy="90" r="4"></circle>
+    <circle cx="360" cy="180" r="5"></circle>
+    <circle cx="300" cy="300" r="4"></circle>
+    <circle cx="900" cy="120" r="5"></circle>
+    <circle cx="1020" cy="200" r="4"></circle>
+    <circle cx="980" cy="330" r="5"></circle>
+    <circle cx="840" cy="300" r="4"></circle>
+    <circle cx="150" cy="600" r="4"></circle>
+    <circle cx="280" cy="660" r="5"></circle>
+    <circle cx="260" cy="760" r="4"></circle>
+    <circle cx="1000" cy="620" r="4"></circle>
+    <circle cx="1100" cy="560" r="5"></circle>
+    <circle cx="1150" cy="670" r="4"></circle>
+  </g>
+</svg>
+
+<header class="nav">
+  <span class="nav__mark">AR<span class="nav__mark-dot">·</span></span>
+  <nav class="nav__links">
+    <a href="#work">Internships</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__photo-frame">
+      <img src="photo.jpg" alt="Portrait of Ankit Raj" class="hero__photo">
+    </div>
+    <p class="eyebrow">Log&nbsp;01 — Profile</p>
+    <h1 class="hero__title">Ankit&nbsp;Raj</h1>
+    <p class="hero__role">Research Scholar, Integrated MSc Chemistry — NISER Bhubaneswar</p>
+    <p class="hero__summary">
+      Chemistry undergraduate with strong footing in physical chemistry, quantum mechanics,
+      and inorganic energy materials. I build and run multi-scale molecular models —
+      GROMACS, VMD, and Python — to connect atomic-level structure to the properties
+      that matter: reactivity, stability, and energy conversion.
+    </p>
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary">Get in touch</a>
+      <a href="mailto:rajankit8880@gmail.com" class="btn btn--ghost">rajankit8880@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <p class="eyebrow">Log 02 — Education</p>
+    <h2 class="section__title">Foundation</h2>
+    <div class="table">
+      <div class="table__row table__row--head">
+        <span>Programme</span><span>Institute</span><span>Grade</span>
+      </div>
+      <div class="table__row">
+        <span>Integrated MSc, Chemistry</span><span>NISER, Bhubaneswar</span><span>7.00 CGPA</span>
+      </div>
+      <div class="table__row">
+        <span>I.Sc (PCMB)</span><span>SP Jain College</span><span>90.6%</span>
+      </div>
+      <div class="table__row">
+        <span>Matriculation</span><span>Bal Vikas School</span><span>91%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section class="section" id="work">
+    <p class="eyebrow">Log 03 — Internships</p>
+    <h2 class="section__title">Where the modeling happened</h2>
+
+    <article class="entry entry--featured">
+      <div class="entry__marker">Recent</div>
+      <div class="entry__body">
+        <h3 class="entry__title">Indian Institute of Technology (BHU), Varanasi</h3>
+        <p class="entry__subtitle">Molecular Dynamics Simulation — Research Internship</p>
+        <ul class="entry__list">
+          <li>Ran classical molecular dynamics (MD) simulations in <strong>GROMACS</strong> to study how atomic-scale structure governs the stability and dynamic behaviour of the system under investigation, sampling trajectories across multiple simulated timescales to capture equilibrium and near-equilibrium behaviour.</li>
+          <li>Set up simulation systems end-to-end — topology generation, solvation/energy minimization, NVT/NPT equilibration, and production runs — within a Linux (Ubuntu) environment.</li>
+          <li>Analyzed trajectories for structural and energetic descriptors (e.g. RMSD/RMSF, radial distribution functions, interaction energies) using <strong>VMD</strong> and Python (NumPy, Matplotlib) to connect simulation output back to physical/chemical interpretation.</li>
+          <li>Strengthened working understanding of force-field–based modeling and how MD complements experimental and quantum-chemical approaches to studying molecular systems.</li>
+        </ul>
+        <p class="entry__note">✎ Draft bullets — swap in your exact system studied, dates, and any specific results/mentor name before publishing.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__marker">IIT Bhubaneswar</div>
+      <div class="entry__body">
+        <h3 class="entry__title">Indian Institute of Technology, Bhubaneswar</h3>
+        <p class="entry__subtitle">Theoretical &amp; Computational Chemistry (Molecular Dynamics)</p>
+        <ul class="entry__list">
+          <li>Performed multi-scale MD simulations using GROMACS on inorganic energy materials and protein–ligand complexes in a Linux (Ubuntu) environment.</li>
+          <li>Applied quantum chemical and theoretical chemistry concepts to analyze structure–property relationships and reaction mechanisms in hybrid nanomaterials.</li>
+          <li>Conducted trajectory analysis and molecular visualization using VMD and PyMOL, with data analysis in Python (NumPy, Matplotlib).</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__marker">IIT Roorkee</div>
+      <div class="entry__body">
+        <h3 class="entry__title">Indian Institute of Technology, Roorkee</h3>
+        <p class="entry__subtitle">Computational Neuroscience &amp; Biophysics</p>
+        <ul class="entry__list">
+          <li>Investigated dendritic computation and non-linear synaptic integration using Brian2 and Dendrify 2.0 frameworks.</li>
+          <li>Developed multi-compartmental neuronal models to study membrane potential dynamics, synaptic diffusion, and signal propagation in complex dendritic structures.</li>
+          <li>Explored implications for neuromorphic engineering and bio-inspired computational architectures.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <p class="eyebrow">Log 04 — Projects</p>
+    <h2 class="section__title">Independent work</h2>
+
+    <div class="cards">
+      <article class="card">
+        <h3 class="card__title">Computational Bio-imaging &amp; Signal Processing</h3>
+        <p class="card__tag">NISER, Bhubaneswar</p>
+        <p class="card__text">Optimized Bioluminescence Imaging (BLI) using Stochastic Resonance (SR) to enhance image resolution and detectability in non-linear signal processing. Analyzed CCD sensor noise characteristics and analog-to-digital conversion to improve signal-to-noise ratio (SNR) in high-sensitivity imaging systems.</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">Perovskite Solar Cell Energy Materials</h3>
+        <p class="card__tag">Independent Study</p>
+        <p class="card__text">Investigated perovskite materials for photovoltaic applications, analyzing their structural and optoelectronic properties, and the factors affecting efficiency and stability relevant to next-generation solar energy technologies.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <p class="eyebrow">Log 05 — Toolkit</p>
+    <h2 class="section__title">Skills &amp; expertise</h2>
+
+    <div class="skills">
+      <div class="skills__group">
+        <h3 class="skills__label">Technical</h3>
+        <div class="pills">
+          <span class="pill">Linux (Ubuntu)</span>
+          <span class="pill">Python</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">Matplotlib</span>
+        </div>
+      </div>
+      <div class="skills__group">
+        <h3 class="skills__label">Computational &amp; Research Tools</h3>
+        <div class="pills">
+          <span class="pill">GROMACS</span>
+          <span class="pill">VMD</span>
+          <span class="pill">PyMOL</span>
+          <span class="pill">Dendrify</span>
+          <span class="pill">Molecular Dynamics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievements">
+      <h3 class="skills__label">Key achievements</h3>
+      <ul class="achievements__list">
+        <li>INSPIRE Scholar (DAE)</li>
+        <li>JEE Advanced Qualified</li>
+        <li>IISER Qualified</li>
+      </ul>
+    </div>
+
+    <div class="extracurricular">
+      <h3 class="skills__label">Beyond the lab</h3>
+      <ul class="achievements__list">
+        <li>Badminton &amp; Kho-Kho player — active in NISER sports events</li>
+        <li>IISM 2025 — volunteered in athletics event organization and management</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--contact" id="contact">
+    <p class="eyebrow">Log 06 — Contact</p>
+    <h2 class="section__title">Let's talk chemistry</h2>
+    <p class="contact__text">Open to research collaborations, internships, and conversations about computational chemistry.</p>
+    <div class="contact__links">
+      <a href="mailto:rajankit8880@gmail.com" class="contact__link">rajankit8880@gmail.com</a>
+      <a href="tel:+917547008804" class="contact__link">+91 75470 08804</a>
+      <a href="https://www.linkedin.com/in/ankit-raj-a8007a318" target="_blank" rel="noopener" class="contact__link">linkedin.com/in/ankit-raj-a8007a318</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Ankit Raj. Built with GROMACS-grade attention to detail.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+/* ===================================================================
+   TOKENS
+   =================================================================== */
+:root {
+  --bg:        #14181B;
+  --bg-alt:    #1B2024;
+  --ink:       #ECEEEF;
+  --ink-dim:   #97A1AA;
+  --teal:      #3FB6A8;
+  --teal-dim:  rgba(63, 182, 168, 0.14);
+  --gold:      #CBA135;
+  --line:      rgba(236, 238, 239, 0.10);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'IBM Plex Sans', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  --gap: clamp(1.25rem, 2vw, 2rem);
+  --radius: 4px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ===================================================================
+   BACKGROUND LATTICE (signature element)
+   =================================================================== */
+.bg-lattice {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.bg-lattice .bonds line {
+  stroke: var(--teal);
+  stroke-width: 1;
+  opacity: 0.22;
+}
+.bg-lattice .atoms circle {
+  fill: var(--gold);
+  opacity: 0.55;
+  animation: pulse 5s ease-in-out infinite;
+}
+.bg-lattice .atoms circle:nth-child(3n) { animation-delay: -1.5s; }
+.bg-lattice .atoms circle:nth-child(4n) { animation-delay: -3s; fill: var(--teal); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+
+/* ===================================================================
+   LAYOUT SHELL
+   =================================================================== */
+main, .nav, .footer {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.6rem;
+}
+
+/* ===================================================================
+   NAV
+   =================================================================== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+.nav__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+.nav__mark-dot { color: var(--gold); }
+.nav__links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.nav__links a {
+  color: var(--ink-dim);
+  transition: color 0.2s ease;
+}
+.nav__links a:hover { color: var(--teal); }
+
+/* ===================================================================
+   HERO
+   =================================================================== */
+.hero {
+  padding-top: clamp(2rem, 6vw, 4rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+.hero__photo-frame {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--teal);
+  padding: 3px;
+  margin-bottom: 1.75rem;
+}
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+}
+.hero__summary {
+  max-width: 58ch;
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.btn--primary {
+  background: var(--teal);
+  color: #0D1113;
+  font-weight: 500;
+}
+.btn--primary:hover { transform: translateY(-1px); }
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--ink-dim);
+}
+.btn--ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ===================================================================
+   SECTION SHELL
+   =================================================================== */
+.section {
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--line);
+}
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 2rem;
+}
+
+/* ===================================================================
+   EDUCATION TABLE
+   =================================================================== */
+.table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.table__row {
+  display: grid;
+  grid-template-columns: 1.4fr 1.2fr 0.8fr;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+.table__row:last-child { border-bottom: none; }
+.table__row--head {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  background: var(--bg-alt);
+}
+.table__row span:last-child { color: var(--gold); font-family: var(--font-mono); }
+
+/* ===================================================================
+   INTERNSHIP ENTRIES
+   =================================================================== */
+.entry {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.entry:first-of-type { border-top: none; }
+
+.entry--featured {
+  background: var(--teal-dim);
+  border: 1px solid rgba(63, 182, 168, 0.35);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.entry--featured + .entry { border-top: none; }
+
+.entry__marker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+}
+.entry--featured .entry__marker {
+  color: var(--gold);
+  font-weight: 500;
+}
+.entry__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+.entry__subtitle {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin: 0 0 0.9rem;
+  font-style: italic;
+}
+.entry__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+.entry__list li { margin-bottom: 0.55rem; }
+.entry__list li:last-child { margin-bottom: 0; }
+.entry__note {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold);
+}
+
+@media (max-width: 620px) {
+  .entry { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+/* ===================================================================
+   PROJECT CARDS
+   =================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  background: var(--bg-alt);
+  transition: border-color 0.2s ease;
+}
+.card:hover { border-color: var(--teal); }
+.card__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.3rem;
+}
+.card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--teal);
+  margin: 0 0 0.8rem;
+}
+.card__text {
+  font-size: 0.92rem;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+@media (max-width: 620px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+/* ===================================================================
+   SKILLS
+   =================================================================== */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.skills__label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin: 0 0 0.9rem;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.achievements, .extracurricular { margin-bottom: 2rem; }
+.achievements__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-dim);
+  font-size: 0.92rem;
+}
+.achievements__list li { margin-bottom: 0.4rem; }
+
+@media (max-width: 620px) {
+  .skills { grid-template-columns: 1fr; }
+}
+
+/* ===================================================================
+   CONTACT
+   =================================================================== */
+.section--contact { border-bottom: none; }
+.contact__text {
+  color: var(--ink-dim);
+  max-width: 50ch;
+  margin: 0 0 1.5rem;
+}
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+}
+.contact__link {
+  color: var(--teal);
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.contact__link:hover { border-color: var(--teal); }
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+}
